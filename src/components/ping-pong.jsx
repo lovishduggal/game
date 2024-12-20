@@ -6,7 +6,6 @@ const GameInstructions = () => (
     <h2>How to Play</h2>
     <ul>
       <li>Use ← → arrow keys to move the paddle</li>
-      <li>Keep the ball bouncing to score points</li>
       <li>Ball changes direction based on where it hits the paddle</li>
       <li>Ball gradually slows down due to friction</li>
       <li>Game ends if ball hits bottom or stops moving</li>
