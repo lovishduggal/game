@@ -1,0 +1,36 @@
+.ping-pong {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+}
+
+canvas {
+  background: #000;
+  border: 2px solid #333;
+}
+
+.play-again-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 50px);
+  padding: 12px 24px;
+  font-size: 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 10;
+}
+
+.play-again-button:hover {
+  background-color: #45a049;
+}
+
+.play-again-button:active {
+  transform: translate(-50%, 51px);
+}
