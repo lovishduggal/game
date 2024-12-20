@@ -34,3 +34,42 @@ canvas {
 .play-again-button:active {
   transform: translate(-50%, 51px);
 }
+
+.ping-pong-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.instructions {
+  background: #333;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  max-width: 600px;
+}
+
+.instructions h2 {
+  color: #4caf50;
+  margin-bottom: 10px;
+}
+
+.instructions ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.instructions li {
+  margin: 8px 0;
+  padding-left: 20px;
+  position: relative;
+}
+
+.instructions li:before {
+  content: '•';
+  color: #4caf50;
+  position: absolute;
+  left: 0;
+}

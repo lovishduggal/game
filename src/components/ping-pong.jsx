@@ -1,6 +1,19 @@
 import { useEffect, useRef, useState } from 'react';
 import './ping-pong.css';
 
+const GameInstructions = () => (
+  <div className="instructions">
+    <h2>How to Play</h2>
+    <ul>
+      <li>Use ← → arrow keys to move the paddle</li>
+      <li>Keep the ball bouncing to score points</li>
+      <li>Ball changes direction based on where it hits the paddle</li>
+      <li>Ball gradually slows down due to friction</li>
+      <li>Game ends if ball hits bottom or stops moving</li>
+    </ul>
+  </div>
+);
+
 const PingPong = () => {
   const canvasRef = useRef(null);
   const [showPlayAgain, setShowPlayAgain] = useState(false);
@@ -209,13 +222,16 @@ const PingPong = () => {
   };
 
   return (
-    <div className="ping-pong">
-      <canvas ref={canvasRef} />
-      {showPlayAgain && (
-        <button className="play-again-button" onClick={resetGame}>
-          Play Again
-        </button>
-      )}
+    <div className="ping-pong-container">
+      <GameInstructions />
+      <div className="ping-pong">
+        <canvas ref={canvasRef} />
+        {showPlayAgain && (
+          <button className="play-again-button" onClick={resetGame}>
+            Play Again
+          </button>
+        )}
+      </div>
     </div>
   );
 };
