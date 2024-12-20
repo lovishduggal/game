@@ -150,10 +150,16 @@ const PingPong = () => {
         game.ball.x > game.paddle.x &&
         game.ball.x < game.paddle.x + game.paddle.width
       ) {
-        // Reverse vertical direction
-        game.ball.dy = -Math.abs(game.ball.dy);
+        // Calculate relative position of ball hit on paddle (between -1 and 1)
+        const hitPosition =
+          (game.ball.x - (game.paddle.x + game.paddle.width / 2)) /
+          (game.paddle.width / 2);
 
-        // Add a slight boost to counteract friction (optional)
+        // Change angle based on where the ball hits the paddle
+        game.ball.dx = hitPosition * game.ball.speed * 1.5; // Multiply by 1.5 for more pronounced angle
+        game.ball.dy = -Math.abs(game.ball.dy); // Always bounce up
+
+        // Add a slight boost to counteract friction
         const boostFactor = 1.1;
         game.ball.dx *= boostFactor;
         game.ball.dy *= boostFactor;
